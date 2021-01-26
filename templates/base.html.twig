@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('assets/css/foundation.css') }}" rel="stylesheet">
+    {% endblock %}
+
+    {% block javascripts %}{% endblock %}
+</head>
+<body>
+
+{{ include('header.html.twig', sandboxed = true) }}
+<div class="grid-x">
+    <div class="cell medium-2">
+        Sidebar
+    </div>
+    <div class="cell medium-6">
+        {% block body %}
+            {{ content }}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>
